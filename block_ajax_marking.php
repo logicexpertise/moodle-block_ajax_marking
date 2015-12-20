@@ -151,6 +151,7 @@ class block_ajax_marking extends block_base {
             // otherwise.
             if (has_capability('moodle/course:manageactivities', $PAGE->context)) {
                 $this->content = new stdClass();
+                $this->content->text = '';
                 $this->content->text .= get_string('nogradedassessments', 'block_ajax_marking');
             } else {
                 // This will stop the other functions like has_content() from running all the way
@@ -196,7 +197,7 @@ class block_ajax_marking extends block_base {
                                  title="'.$modname.'" />';
         }
         $html .= '<img id="block_ajax_marking_course_icon" class="dynamicicon"
-                                 src="'.$OUTPUT->pix_url('c/course').'"
+                                 src="'.$OUTPUT->pix_url('i/course').'"
                                  alt="'.get_string('course').'"
                                  title="'.get_string('course').'" />';
         $html .= '<img id="block_ajax_marking_group_icon" class="dynamicicon"
